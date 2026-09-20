@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/git2.html">git2</a></li>
+  <li><a href="../modules/Blob.html">Blob</a></li>
+  <li><a href="../modules/Commit.html">Commit</a></li>
+  <li><strong>Config</strong></li>
+  <li><a href="../modules/Index.html">Index</a></li>
+  <li><a href="../modules/IndexEntry.html">IndexEntry</a></li>
+  <li><a href="../modules/IndexEntryUnmerged.html">IndexEntryUnmerged</a></li>
+  <li><a href="../modules/ODB.html">ODB</a></li>
+  <li><a href="../modules/ODBBackend.html">ODBBackend</a></li>
+  <li><a href="../modules/OID.html">OID</a></li>
+  <li><a href="../modules/OID_Shorten.html">OID_Shorten</a></li>
+  <li><a href="../modules/Object.html">Object</a></li>
+  <li><a href="../modules/OdbObject.html">OdbObject</a></li>
+  <li><a href="../modules/Reference.html">Reference</a></li>
+  <li><a href="../modules/Repository.html">Repository</a></li>
+  <li><a href="../modules/RevWalk.html">RevWalk</a></li>
+  <li><a href="../modules/Signature.html">Signature</a></li>
+  <li><a href="../modules/StrArray.html">StrArray</a></li>
+  <li><a href="../modules/Tag.html">Tag</a></li>
+  <li><a href="../modules/Tree.html">Tree</a></li>
+  <li><a href="../modules/TreeEntry.html">TreeEntry</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>Config</code></h1>
+<p>Class "Config".</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#new">new ()</a></td>
+	<td class="summary">Create a new Config object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#open">open (path)</a></td>
+	<td class="summary">Create a new Config object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#free">free ()</a></td>
+	<td class="summary">Destroy this object (will be called by Garbage Collector).</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#add_file_ondisk">add_file_ondisk (path, level, repo, force)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_int32">get_int32 (name)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_int32">set_int32 (name, value)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_int64">get_int64 (name)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_int64">set_int64 (name, value)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_bool">get_bool (name)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_bool">set_bool (value, name)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_string">get_string (name)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_string">set_string (name, value)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#delete_entry">delete_entry (name)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#delete_multivar">delete_multivar (name, regexp)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "new"></a>
+    <strong>new ()</strong>
+    </dt>
+    <dd>
+    Create a new Config object.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_new">git_config_new</a>:<p><p>This object is empty, so you have to add a file to it before you
+  can do anything with it.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Config.html">Config</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "open"></a>
+    <strong>open (path)</strong>
+    </dt>
+    <dd>
+    Create a new Config object.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_open_ondisk">git_config_open_ondisk</a>:<p><p>This method is a simple utility wrapper for the following sequence
+  of calls:
+ 	- git_config_new
+ 	- git_config_add_file_ondisk
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         Path to the on-disk file to open.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Config.html">Config</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "free"></a>
+    <strong>free ()</strong>
+    </dt>
+    <dd>
+    Destroy this object (will be called by Garbage Collector).
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_free">git_config_free</a>:<p><p>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "add_file_ondisk"></a>
+    <strong>add_file_ondisk (path, level, repo, force)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_add_file_ondisk">git_config_add_file_ondisk</a>:<p><p>The on-disk file pointed at by `path` will be opened and
+  parsed; it's expected to be a native Git config file following
+  the default Git config syntax (see man git-config).<p> Note that the configuration object will free the file
+  automatically.<p> Further queries on this config object will access each
+  of the config file instances in order (instances with
+  a higher priority will be accessed first).
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         path to the configuration file (backend) to add.  Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">level</span>
+         Must be of type <code>integer</code>.
+        </li>
+        <li><span class="parameter">repo</span>
+         Must be of type <a href="Repository.html">Repository</a>.
+        </li>
+        <li><span class="parameter">force</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_int32"></a>
+    <strong>get_int32 (name)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>integer</code> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_int32"></a>
+    <strong>set_int32 (name, value)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">value</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_int64"></a>
+    <strong>get_int64 (name)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>integer</code> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_int64"></a>
+    <strong>set_int64 (name, value)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">value</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_bool"></a>
+    <strong>get_bool (name)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_get_bool">git_config_get_bool</a>:<p><p>This function uses the usual C convention of 0 being false and
+  anything else true.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         the variable's name.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>boolean</code> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_bool"></a>
+    <strong>set_bool (value, name)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_set_bool">git_config_set_bool</a>:<p><p>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+         the value to store.  Must be of type <code>boolean</code>.
+        </li>
+        <li><span class="parameter">name</span>
+         the variable's name.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_string"></a>
+    <strong>get_string (name)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_get_string">git_config_get_string</a>:<p><p>The string is owned by the variable and should not be freed by the
+  user.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         the variable's name.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>string</code> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_string"></a>
+    <strong>set_string (name, value)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/config/git_config_set_string">git_config_set_string</a>:<p><p>A copy of the string is made and the user is free to use it
+  afterwards.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         the variable's name.  Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">value</span>
+         the string to store..  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "delete_entry"></a>
+    <strong>delete_entry (name)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "delete_multivar"></a>
+    <strong>delete_multivar (name, regexp)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">regexp</span>
+         Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-21 20:56:42 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

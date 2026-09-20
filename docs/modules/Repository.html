@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/git2.html">git2</a></li>
+  <li><a href="../modules/Blob.html">Blob</a></li>
+  <li><a href="../modules/Commit.html">Commit</a></li>
+  <li><a href="../modules/Config.html">Config</a></li>
+  <li><a href="../modules/Index.html">Index</a></li>
+  <li><a href="../modules/IndexEntry.html">IndexEntry</a></li>
+  <li><a href="../modules/IndexEntryUnmerged.html">IndexEntryUnmerged</a></li>
+  <li><a href="../modules/ODB.html">ODB</a></li>
+  <li><a href="../modules/ODBBackend.html">ODBBackend</a></li>
+  <li><a href="../modules/OID.html">OID</a></li>
+  <li><a href="../modules/OID_Shorten.html">OID_Shorten</a></li>
+  <li><a href="../modules/Object.html">Object</a></li>
+  <li><a href="../modules/OdbObject.html">OdbObject</a></li>
+  <li><a href="../modules/Reference.html">Reference</a></li>
+  <li><strong>Repository</strong></li>
+  <li><a href="../modules/RevWalk.html">RevWalk</a></li>
+  <li><a href="../modules/Signature.html">Signature</a></li>
+  <li><a href="../modules/StrArray.html">StrArray</a></li>
+  <li><a href="../modules/Tag.html">Tag</a></li>
+  <li><a href="../modules/Tree.html">Tree</a></li>
+  <li><a href="../modules/TreeEntry.html">TreeEntry</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>Repository</code></h1>
+<p>Class "Repository".</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#open">open (path)</a></td>
+	<td class="summary">Create a new Repository object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#init">init (path, is_bare)</a></td>
+	<td class="summary">Create a new Repository object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#head">head ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#head_detached">head_detached ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#head_unborn">head_unborn ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_empty">is_empty ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_bare">is_bare ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#path">path ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#workdir">workdir ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_workdir">set_workdir (workdir, update_gitlink)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#config">config ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_config">set_config (config)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#odb">odb ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_odb">set_odb (odb)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#index">index ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_index">set_index (index)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "open"></a>
+    <strong>open (path)</strong>
+    </dt>
+    <dd>
+    Create a new Repository object.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_open">git_repository_open</a>:<p><p>The 'path' argument must point to either a git repository
+  folder, or an existing work dir.<p> The method will automatically detect if 'path' is a normal
+  or bare repository or fail is 'path' is neither.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         the path to the repository.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Repository.html">Repository</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "init"></a>
+    <strong>init (path, is_bare)</strong>
+    </dt>
+    <dd>
+    Create a new Repository object.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_init">git_repository_init</a>:<p><p>TODO:
+ 	- Reinit the repository
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         the path to the repository.  Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">is_bare</span>
+         if true, a Git repository without a working directory is created   at the pointed path. If false, provided path will be considered as the working   directory into which the .git directory will be created..  Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Repository.html">Repository</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "head"></a>
+    <strong>head ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_head">git_repository_head</a>:<p><p>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Reference.html">Reference</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "head_detached"></a>
+    <strong>head_detached ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_head_detached">git_repository_head_detached</a>:<p><p>A repository's HEAD is detached when it points directly to a commit
+  instead of a branch.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>boolean</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "head_unborn"></a>
+    <strong>head_unborn ()</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>boolean</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_empty"></a>
+    <strong>is_empty ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_is_empty">git_repository_is_empty</a>:<p><p>An empty repository has just been initialized and contains
+  no commits.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>boolean</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_bare"></a>
+    <strong>is_bare ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_is_bare">git_repository_is_bare</a>:<p><p>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>boolean</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "path"></a>
+    <strong>path ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_path">git_repository_path</a>:<p><p>This is the path of the `.git` folder for normal repositories,
+  or of the repository itself for bare repositories.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>string</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "workdir"></a>
+    <strong>workdir ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_workdir">git_repository_workdir</a>:<p><p>If the repository is bare, this function will always return
+  NULL.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>string</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_workdir"></a>
+    <strong>set_workdir (workdir, update_gitlink)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_set_workdir">git_repository_set_workdir</a>:<p><p>The working directory doesn't need to be the same one
+  that contains the `.git` folder for this repository.<p> If this repository is bare, setting its working directory
+  will turn it into a normal repository, capable of performing
+  all the common workdir operations (checkout, status, index
+  manipulation, etc).
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">workdir</span>
+         The path to a working directory.  Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">update_gitlink</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "config"></a>
+    <strong>config ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_config">git_repository_config</a>:<p><p>If a configuration file has not been set, the default
+  config set for the repository will be returned, including
+  global and system configurations (if they are available).<p> The configuration file must be freed once it's no longer
+  being used by the user.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Config.html">Config</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_config"></a>
+    <strong>set_config (config)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_set_config">git_repository_set_config</a>:<p><p>This configuration file will be used for all configuration
+  queries involving this repository.<p> The repository will keep a reference to the config file;
+  the user must still free the config after setting it
+  to the repository, or it will leak.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">config</span>
+         A Config object.  Must be of type <a href="Config.html">Config</a>.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "odb"></a>
+    <strong>odb ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_odb">git_repository_odb</a>:<p><p>If a custom ODB has not been set, the default
+  database for the repository will be returned (the one
+  located in `.git/objects`).<p> The ODB must be freed once it's no longer being used by
+  the user.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="ODB.html">ODB</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_odb"></a>
+    <strong>set_odb (odb)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_set_odb">git_repository_set_odb</a>:<p><p>The ODB will be used for all object-related operations
+  involving this repository.<p> The repository will keep a reference to the ODB; the user
+  must still free the ODB object after setting it to the
+  repository, or it will leak.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">odb</span>
+         An ODB object.  Must be of type <a href="ODB.html">ODB</a>.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "index"></a>
+    <strong>index ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_index">git_repository_index</a>:<p><p>If a custom index has not been set, the default
+  index for the repository will be returned (the one
+  located in `.git/index`).<p> The index must be freed once it's no longer being used by
+  the user.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Index.html">Index</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_index"></a>
+    <strong>set_index (index)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/repository/git_repository_set_index">git_repository_set_index</a>:<p><p>This index will be used for all index-related operations
+  involving this repository.<p> The repository will keep a reference to the index file;
+  the user must still free the index after setting it
+  to the repository, or it will leak.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         An index object.  Must be of type <a href="Index.html">Index</a>.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-21 20:56:42 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

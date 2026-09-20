@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/git2.html">git2</a></li>
+  <li><a href="../modules/Blob.html">Blob</a></li>
+  <li><a href="../modules/Commit.html">Commit</a></li>
+  <li><a href="../modules/Config.html">Config</a></li>
+  <li><strong>Index</strong></li>
+  <li><a href="../modules/IndexEntry.html">IndexEntry</a></li>
+  <li><a href="../modules/IndexEntryUnmerged.html">IndexEntryUnmerged</a></li>
+  <li><a href="../modules/ODB.html">ODB</a></li>
+  <li><a href="../modules/ODBBackend.html">ODBBackend</a></li>
+  <li><a href="../modules/OID.html">OID</a></li>
+  <li><a href="../modules/OID_Shorten.html">OID_Shorten</a></li>
+  <li><a href="../modules/Object.html">Object</a></li>
+  <li><a href="../modules/OdbObject.html">OdbObject</a></li>
+  <li><a href="../modules/Reference.html">Reference</a></li>
+  <li><a href="../modules/Repository.html">Repository</a></li>
+  <li><a href="../modules/RevWalk.html">RevWalk</a></li>
+  <li><a href="../modules/Signature.html">Signature</a></li>
+  <li><a href="../modules/StrArray.html">StrArray</a></li>
+  <li><a href="../modules/Tag.html">Tag</a></li>
+  <li><a href="../modules/Tree.html">Tree</a></li>
+  <li><a href="../modules/TreeEntry.html">TreeEntry</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>Index</code></h1>
+<p>Class "Index".</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#bare">bare (index_path)</a></td>
+	<td class="summary">Create a new Index object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#clear">clear ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#read">read (force)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#write">write ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#find">find (at_pos, path)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#add_bypath">add_bypath (path)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#add">add (source_entry)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#remove">remove (path, stage)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_byindex">get_byindex (n)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_bypath">get_bypath (path, stage)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#entrycount">entrycount ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#reuc_entrycount">reuc_entrycount ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#reuc_get_bypath">reuc_get_bypath (path)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#reuc_get_byindex">reuc_get_byindex (n)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#read_tree">read_tree (tree)</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "bare"></a>
+    <strong>bare (index_path)</strong>
+    </dt>
+    <dd>
+    Create a new Index object.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_open">git_index_open</a>:<p><p>Since there is no ODB or working directory behind this index,
+  any Index methods which rely on these (e.g. index_add) will
+  fail with the GIT_EBAREINDEX error code.<p> If you need to access the index of an actual repository,
+  use the `git_repository_index` wrapper.<p> The index must be freed once it's no longer in use.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index_path</span>
+         the path to the index file in disk.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Index.html">Index</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "clear"></a>
+    <strong>clear ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_clear">git_index_clear</a>:<p><p>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "read"></a>
+    <strong>read (force)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_read">git_index_read</a>:<p><p>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">force</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "write"></a>
+    <strong>write ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_write">git_index_write</a>:<p><p>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "find"></a>
+    <strong>find (at_pos, path)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_find">git_index_find</a>:<p><p>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">at_pos</span>
+         Must be of type <code>lightuserdata</code>.
+        </li>
+        <li><span class="parameter">path</span>
+         path to search.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>integer</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "add_bypath"></a>
+    <strong>add_bypath (path)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "add"></a>
+    <strong>add (source_entry)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_add">git_index_add</a>:<p><p>The file `path` must be relative to the repository's
+  working folder and must be readable.<p> This method will fail in bare index instances.<p> This forces the file to be added to the index, not looking
+  at gitignore rules.  Those rules can be evaluated through
+  the git_status APIs (in status.h) before calling this.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">source_entry</span>
+         Must be of type <a href="IndexEntry.html">IndexEntry</a>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "remove"></a>
+    <strong>remove (path, stage)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_remove">git_index_remove</a>:<p><p>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">stage</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_byindex"></a>
+    <strong>get_byindex (n)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">n</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <a href="IndexEntry.html">IndexEntry</a>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_bypath"></a>
+    <strong>get_bypath (path, stage)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">stage</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <a href="IndexEntry.html">IndexEntry</a>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "entrycount"></a>
+    <strong>entrycount ()</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_entrycount">git_index_entrycount</a>:<p><p>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>integer</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "reuc_entrycount"></a>
+    <strong>reuc_entrycount ()</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>integer</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "reuc_get_bypath"></a>
+    <strong>reuc_get_bypath (path)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <a href="IndexEntryUnmerged.html">IndexEntryUnmerged</a>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "reuc_get_byindex"></a>
+    <strong>reuc_get_byindex (n)</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">n</span>
+         Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <a href="IndexEntryUnmerged.html">IndexEntryUnmerged</a>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "read_tree"></a>
+    <strong>read_tree (tree)</strong>
+    </dt>
+    <dd>
+    object method.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/index/git_index_read_tree">git_index_read_tree</a>:<p><p>The current index contents will be replaced by the specified tree.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tree</span>
+         tree to read.  Must be of type <a href="Tree.html">Tree</a>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>true</code> if no error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-21 20:56:42 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

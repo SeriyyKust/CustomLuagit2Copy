@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/git2.html">git2</a></li>
+  <li><a href="../modules/Blob.html">Blob</a></li>
+  <li><a href="../modules/Commit.html">Commit</a></li>
+  <li><a href="../modules/Config.html">Config</a></li>
+  <li><a href="../modules/Index.html">Index</a></li>
+  <li><a href="../modules/IndexEntry.html">IndexEntry</a></li>
+  <li><a href="../modules/IndexEntryUnmerged.html">IndexEntryUnmerged</a></li>
+  <li><a href="../modules/ODB.html">ODB</a></li>
+  <li><a href="../modules/ODBBackend.html">ODBBackend</a></li>
+  <li><a href="../modules/OID.html">OID</a></li>
+  <li><a href="../modules/OID_Shorten.html">OID_Shorten</a></li>
+  <li><a href="../modules/Object.html">Object</a></li>
+  <li><a href="../modules/OdbObject.html">OdbObject</a></li>
+  <li><a href="../modules/Reference.html">Reference</a></li>
+  <li><a href="../modules/Repository.html">Repository</a></li>
+  <li><a href="../modules/RevWalk.html">RevWalk</a></li>
+  <li><strong>Signature</strong></li>
+  <li><a href="../modules/StrArray.html">StrArray</a></li>
+  <li><a href="../modules/Tag.html">Tag</a></li>
+  <li><a href="../modules/Tree.html">Tree</a></li>
+  <li><a href="../modules/TreeEntry.html">TreeEntry</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>Signature</code></h1>
+<p>Class "Signature".</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#new">new (name, email, time, offset)</a></td>
+	<td class="summary">Create a new Signature object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#now">now (name, email)</a></td>
+	<td class="summary">Create a new Signature object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#name">name ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#email">email ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#when">when ()</a></td>
+	<td class="summary">object method.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "new"></a>
+    <strong>new (name, email, time, offset)</strong>
+    </dt>
+    <dd>
+    Create a new Signature object.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/signature/git_signature_new">git_signature_new</a>:<p><p>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         name of the person.  Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">email</span>
+         email of the person.  Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">time</span>
+         time when the action happened.  Must be of type <code>integer</code>.
+        </li>
+        <li><span class="parameter">offset</span>
+         timezone offset in minutes for the time.  Must be of type <code>integer</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Signature.html">Signature</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "now"></a>
+    <strong>now (name, email)</strong>
+    </dt>
+    <dd>
+    Create a new Signature object.
+<p> <p>Calls <a href="http://libgit2.github.io/libgit2/#HEAD/group/signature/git_signature_now">git_signature_now</a>:<p><p>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         name of the person.  Must be of type <code>string</code>.
+        </li>
+        <li><span class="parameter">email</span>
+         email of the person.  Must be of type <code>string</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <a href="Signature.html">Signature</a> or <code>nil</code> on error.</li>
+        <li>
+        Error string.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "name"></a>
+    <strong>name ()</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>string</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "email"></a>
+    <strong>email ()</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        <code>string</code>.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "when"></a>
+    <strong>when ()</strong>
+    </dt>
+    <dd>
+    object method.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        <code>integer</code>.</li>
+        <li>
+        <code>integer</code>.</li>
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-21 20:56:42 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
