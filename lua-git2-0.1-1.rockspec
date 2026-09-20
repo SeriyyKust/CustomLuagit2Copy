@@ -1,5 +1,3 @@
-#!/usr/bin/env lua
-
 package	= 'lua-git2'
 version	= '0.1-1'
 source	= {
